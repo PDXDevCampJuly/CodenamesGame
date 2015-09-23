@@ -1,0 +1,6 @@
+local_settings.py
+ .idea/
+ .idea/*
++__pycache__/
++__pycache__/*
++*.pyc
