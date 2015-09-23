@@ -1,0 +1,8 @@
+.gitignore
+local_settings.py
+.idea/
+.idea/*
+codenames/__pycache__/__init__.cpython-35.pyc
+codenames/__pycache__/local_settings.cpython-35.pyc
+codenames/__pycache__/settings.cpython-35.py
+codenames/local_settings.py
