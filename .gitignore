@@ -1,5 +1,5 @@
 .gitignore
-local_settings.py
+codenames/local_settings.py
 .idea/
 .idea/*
 *.pyc
