@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
-.growon {
+.growon  {
     -webkit-transform: scale(1.3);
     -ms-transform: scale(1.3);
     transform: scale(1.3);
@@ -32,4 +32,24 @@ input {
     color: #000022;
     background-color: #fff;
     border: hidden;
+}
+
+li {
+    list-style: none;
+}
+
+.rspymaster {
+
+}
+
+.bspymaster {
+
+}
+
+
+.wrapper>li {
+    display: inline-block;
+    padding: 20px 20px;
+    margin: 20px 20px;
+    background-color: bisque;
 }
