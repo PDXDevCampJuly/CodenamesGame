@@ -1,0 +1,61 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    background-image: url("../img/test.png");
+    background-repeat: no-repeat;
+    background-size: 100% 102%;
+    background-attachment: fixed;
+    background-position: bottom;
+    color: aliceblue;
+    min-width: 909px;
+}
+
+.username {
+    margin: 11px auto;
+    height: 29px;
+    width: 400px;
+}
+
+ul {
+    list-style: none;
+    margin: 20px auto;
+    padding: 0;
+}
+
+.teamlist {
+    display: inline-block;
+    margin: 25px 93px 37px 93px;
+}
+
+.spymasterred {
+    color: #FF9999;
+
+}
+
+.spymasterblue {
+    color: #99CCFF;
+}
+
+main {
+    margin: 7% 18%;
+    border-radius: 2px;
+    background-color:rgba(102,178,153,0.2);
+    padding: 20px;
+    height: 550px;
+    box-shadow: #002 11px 12px 11px;
+}
+
+.startgame {
+    font-size: 19px;
+    padding: 10px;
+    width: 533px;
+}
+
+input {
+    font-size: 16px;
+    padding: 7px;
+    color: #000022;
+    background-color: #fff;
+    border: hidden;
+    margin: 2;
+}
