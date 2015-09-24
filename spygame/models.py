@@ -2,10 +2,14 @@ from django.db import models
 
 # Create your models here.
 
+class Game(models.Model):
+    turn_status = models.CharField(max_length=30, blank=False)
+    winner = models.CharField(max_length=30, blank=False)
+    password = models.IntegerField()
 
 class Team(models.Model):
     color = models.CharField(max_length=30, blank=False)
-    game_id = models.ForeignKey(Game)
+    game_id = models.ForeignKey(Game, default='')
 
     def __str__(self):
         return self.color
@@ -15,13 +19,8 @@ class Player(models.Model):
     name = models.CharField(max_length=30, blank=False)
     type = models.CharField(max_length=30, blank=False)
 
-def __str__(self):
-    return self.name
-
-class Game(models.Model):
-    turn_status = models.CharField(max_length=30, blank=False)
-    winner = models.CharField(max_length=30, blank=False)
-    password = models.IntegerField()
+    def __str__(self):
+        return self.name
 
 class Dictionary(models.Model):
     word = models.CharField(max_length=30, blank=False)
