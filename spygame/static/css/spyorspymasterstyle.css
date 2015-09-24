@@ -1,0 +1,27 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    background-image: url("../img/test.png");
+    background-repeat: no-repeat;
+    background-size: 100% 102%;
+    color: aliceblue;
+}
+
+main {
+    margin: 7% 18%;
+    border-radius: 2px;
+    background-color:rgba(102,178,153,0.2);
+    padding: 20px;
+    height: 550px;
+    box-shadow: #002 11px 12px 11px;
+}
+
+input {
+    font-size: 16px;
+    padding: 7px;
+    color: #000022;
+    background-color: #fff;
+    border: hidden;
+    width: 214px;
+    margin: 2px 2px;
+}
