@@ -24,7 +24,7 @@ ul {
 
 .teamlist {
     display: inline-block;
-    margin: 25px 29px 36px 93px;
+    margin: 25px 93px 37px 93px;
 }
 
 .spymasterred {
@@ -57,4 +57,5 @@ input {
     color: #000022;
     background-color: #fff;
     border: hidden;
+    margin: 2;
 }
