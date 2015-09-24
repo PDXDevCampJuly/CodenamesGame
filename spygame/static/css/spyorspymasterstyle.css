@@ -5,6 +5,8 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 102%;
     color: aliceblue;
+    background-attachment: fixed;
+    background-position: bottom;
 }
 
 main {

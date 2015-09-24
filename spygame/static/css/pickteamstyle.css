@@ -4,7 +4,10 @@ body {
     background-image: url("../img/test.png");
     background-repeat: no-repeat;
     background-size: 100% 102%;
+    background-attachment: fixed;
+    background-position: bottom;
     color: aliceblue;
+    min-width: 909px;
 }
 
 .username {
