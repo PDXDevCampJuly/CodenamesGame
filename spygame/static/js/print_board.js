@@ -1,8 +1,8 @@
 
 function create_board(){
-    list = ["0","1","2","3","4","5","6"]
+    var list = ["0","1","2","3","4","5","6"];
 
-    var table = document.getElementById('boardwrapper') //Appends table to html
+    var table = document.getElementById('boardwrapper'); //Appends table to html
 
     var new_table = document.createElement('table');
 
