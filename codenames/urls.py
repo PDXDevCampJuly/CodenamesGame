@@ -7,6 +7,5 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    #url(r'^spygame/', include('spygame.urls', namespace="spygame"),
-
+    url(r'^spygame/', include('spygame.urls', namespace="spygame"))
 ]
