@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
-.growon {
+.growon
+/*main*/ {
     -webkit-transform: scale(1.3);
     -ms-transform: scale(1.3);
     transform: scale(1.3);
@@ -32,4 +33,15 @@ input {
     color: #000022;
     background-color: #fff;
     border: hidden;
+}
+
+.cardwrapper {
+    list-style: none;
+}
+
+li {
+    background-color: bisque;
+    padding: 4% 7%;
+    display: inline-block;
+    margin: 6px 3px;
 }
