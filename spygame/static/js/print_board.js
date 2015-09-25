@@ -120,9 +120,3 @@ create_board(list)
 //Make a ajax call
 // take 25 items from the json file
 // put them in list
-
-<<<<<<< HEAD
-create_board()
-
-=======
->>>>>>> ajaxcall
