@@ -4,8 +4,7 @@ from django.core import serializers
 from .models import *
 import json
 from django.http import HttpResponse
-from djnago.view.generic import DetailView
-from books.models import Publisher
+from django.views.generic import DetailView
 
 def Player(request):
     data = []

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block main %}
+<main>
+    <section class="getcode">
+        <h1>Create game</h1>
+        <input type="button" name="click" value="Get code">
+    </section>
+
+    <section class="inputcode">
+        <h1>Join game</h1>
+        <input type="text" name="name" placeholder="Code" required/>
+
+        <input type="submit" name="submit" value="post"/> 
+    </section>
+</main>
+{% endblock %}

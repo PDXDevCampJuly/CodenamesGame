@@ -18,7 +18,7 @@ body {
 }
 
 main {
-    margin: 7% 18%;
+    margin: 7% 13%;
     border-radius: 2px;
     background-color:rgba(102,178,153,0.2);
     padding: 20px;
@@ -86,9 +86,17 @@ div {
     color: #66B2FF;
 }
 
+/*.bwrapper{*/
+    /*height: 211px;*/
+/*}*/
+
 .rspymaster {
     color: #FF6666;
 }
+
+/*.rwrapper {*/
+    /*height: 100px;*/
+/*}*/
 
 .footerwrapper>p{
     display: inline-block;

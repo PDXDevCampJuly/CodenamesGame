@@ -1,36 +1,0 @@
-<!DOCTYPE html>
-<!--{% load staticfiles %}-->
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Pick team</title>
-    <link rel="stylesheet" href="../static/css/pickteamstyle.css" />
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
-</head>
-<body>
-    <main>
-        <section class="usernameinput"> 
-            <h1>Pick a team</h1>
-            <p>Please put in your username and pick one of the teams below</p>
-            <input class="username" type="text" name="name" placeholder="username" required/> 
-        </section>
-
-        <section class="teamlist">
-            <input class="joinred" type="submit" name="submit" value="Join Red team"/> 
-            <ul>
-                <li class="spymasterred">Test master</li>
-                <li>Test spy</li>
-            </ul>
-        </section>
-
-        <section class="teamlist">
-            <input type="submit" name="submit" value="Join Blue team"/> 
-            <ul>
-                <li class="spymasterblue">Test master</li>
-                <li>Test spy</li>
-            </ul>
-        </section>
-        <input class="startgame" type="submit" name="submit" value="Start game"/>
-    </main>
-</body>
-</html>
