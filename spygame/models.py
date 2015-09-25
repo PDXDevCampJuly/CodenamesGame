@@ -30,7 +30,7 @@ class Dictionary(models.Model):
 
 class Card(models.Model):
     game_id = models.ForeignKey(Game)
-    dict_id = models.ForeignKey(Dictionary)
+    dict_word = models.ForeignKey(Dictionary)
     color = models.CharField(max_length=30, blank=False)
     x_coord = models.IntegerField()
     y_coord = models.IntegerField()
