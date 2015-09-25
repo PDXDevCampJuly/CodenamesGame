@@ -1,10 +1,16 @@
-{% extends 'base.html' %}
-{% block main %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spygame</title>
+    <link rel="stylesheet" href="../static/css/gamestyle.css" />
+</head>
+<body>
     <main>
         <section id="boardwrapper" class="boardwrapper">
         </section>
         <div>
-            <section class="bwrapper">
+            <section>
                 <h3>Blue team</h3>
                 <ul>
                     <li class="bspymaster">Test</li>
@@ -12,14 +18,14 @@
                     <li>Test</li>
                 </ul>
             </section>
-            <section class="rwrapper">
-                <h3>Red team</h3>
-                <ul>
-                    <li class="rspymaster">Test</li>
-                    <!-- This is were we'll dynamically load all red team members onto the page-->
-                    <li>Test</li>
-                </ul>
-            </section>
+                <section>
+                    <h3>Red team</h3>
+                    <ul>
+                        <li class="rspymaster">Test</li>
+                        <!-- This is were we'll dynamically load all red team members onto the page-->
+                        <li>Test</li>
+                    </ul>
+                </section>
         </div>
             <p>Please click on your clue team blue!</p>
             <section class="footerwrapper">
@@ -27,4 +33,9 @@
                 <p>1</p>
             </section>
     </main>
-{% endblock %}
+</body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="../static/js/print_board.js">
+</script>
+
+</html>

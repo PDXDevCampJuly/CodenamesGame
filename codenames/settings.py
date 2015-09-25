@@ -55,7 +55,7 @@ ROOT_URLCONF = 'codenames.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'BACKEND': 'django.template.backends.django.DjangoTemplate',
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
