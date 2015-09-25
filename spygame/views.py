@@ -23,8 +23,6 @@ def join_or_create(request):
 def spy_or_spymaster(request):
     return render(request, 'pickSpyOrSpymaster.html')
 
-def assign_players(): # assign player to team
-    pass
 
 def assign_spymaster(): # assign spymaster to team
     pass
@@ -50,17 +48,25 @@ def change_count(): # changes count of clicks players can make per turn
 def validate_click(): # validates that a player click is valid
     pass
 
-def switch_turn(): # returns # of team
+def switch_turn(Team): # returns # of team
     """
-    :return:
+    :param: team_id
+    :return: 1 or -1
     """
-    pass
+    return team * -1
+
 
 def validate_win(): #validates if player has won
-    pass
+    """
+    :param:
+    :return:
+    """
 
 def pass_move(): #allows player to pass turn
-    pass
+    """
+    :return: Boolean
+    """
+    
 
 def remove_cards(): #replaces word on card with image
     pass
