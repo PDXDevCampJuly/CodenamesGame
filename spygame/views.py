@@ -23,6 +23,13 @@ def join_or_create(request):
 def spy_or_spymaster(request):
     return render(request, 'pickSpyOrSpymaster.html')
 
+def create_homepage_url(spy): #if button clicked, display url on homepage
+
+    if spy == true:
+        return render(request, 'spymastergamepg.html')
+    else:
+        return render(request, 'spygameph.html')
+
 
 def assign_spymaster(): # assign spymaster to team
     pass
@@ -45,10 +52,7 @@ def set_count(): #sets count from clue_num set by spymaster
 def change_count(): # changes count of clicks players can make per turn
     pass
 
-def validate_click(): # validates that a player click is valid
-    pass
-
-def switch_turn(Team): # returns # of team
+def switch_turn(team): # returns # of team
     """
     :param: team_id
     :return: 1 or -1
@@ -66,7 +70,7 @@ def pass_move(): #allows player to pass turn
     """
     :return: Boolean
     """
-    
+
 
 def remove_cards(): #replaces word on card with image
     pass
