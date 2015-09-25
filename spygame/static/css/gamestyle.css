@@ -46,6 +46,9 @@ li {
 
 }
 
+ul {
+    padding: 0;
+}
 
 .wrapper>li {
     display: inline-block;
@@ -78,3 +81,21 @@ div {
     /*left: -412px;*/
     /*top: 179px;*/
 /*}*/
+
+.bspymaster {
+    color: #66B2FF;
+}
+
+.rspymaster {
+    color: #FF6666;
+}
+
+.footerwrapper>p{
+    display: inline-block;
+    font-size: 30px;
+    margin: 0 18px 0 0;
+}
+
+.clue {
+    margin: 0 18px 0 0;
+}
