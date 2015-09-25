@@ -1,5 +1,7 @@
 
-function create_board(){
+//var list = ["0","1","2","3","4","5","6"];
+
+(function create_board(){
     var list = ["0","1","2","3","4","5","6"];
 
     var table = document.getElementById('boardwrapper'); //Appends table to html
@@ -20,6 +22,26 @@ function create_board(){
         new_table.appendChild(new_tr);
         table.appendChild(new_table); //appends table to html
     }
-}
+}());
 
-create_board()
+
+//(function () {
+//    $.ajax({
+//        url: "https://whatever.com",
+//        type: "GET",
+//        dataType: "json",
+//        complete: function(data) {
+//            var responce = data.responseJSON.parse;
+//            for (var i=0; i < responce.length; i++) {
+//                var words = data.responseJSON.;
+//
+//                var list = [ ]
+//            }
+//        }
+//    })
+//}());
+
+//Make a ajax call
+// take 25 items from the json file
+// put them in list
+
