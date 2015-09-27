@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from random import choice, sample, shuffle
 from django.core import serializers
 from .models import *
+import string
+
 import json
 from django.http import HttpResponse
 
@@ -20,7 +21,50 @@ def get_spymaster_page(request):
 def join_or_create(request):
     return render(request, 'Homepg.html')
 
-def spy_or_spymaster(request):
+
+def create_game(request):
+    """
+    New game is created when the spy/ spymaster page is loaded.
+    """
+
+    game = Game()
+
+    #Team needs to be assigned to go first
+
+    blueTeam = Team(game_id=game, color='blue')
+    redTeam = Team(game_id=game, color='red')
+
+    goFirst = choice(0, 1)
+
+    words = Dictionary.objects.all()
+    words.shuffle()
+
+    coloredCards = []
+
+    # Make deck of colors
+    if goFirst == 1:
+        coloredCards.append('blue' * 9)
+        coloredCards.append('red' * 8)
+        blueGoFirst = True
+    else:
+        coloredCards.append('red' * 9)
+        coloredCards.append('blue' * 8)
+        redGoFirst = True
+
+    #Add colors to list
+
+    coloredCards.append('beige' * 7)
+    coloredCards.append('black')
+
+    #Randomize color order
+
+    coloredCards = shuffle(coloredCards)
+
+    # Build cards with random words + random colors
+
+    for i in range(len(coloredCards)):
+        coloredCards[i] == Card(color=coloredCards.pop(), game_id=game, dict_word=words.pop())
+
     return render(request, 'pickSpyOrSpymaster.html')
 
 def assign_players(): # assign player to team
@@ -81,6 +125,8 @@ def is_ally(): #determines if card selected is ally
     pass
 
 def is_assassin(): #determines if card selected is assassin
+    if color == "black":
+        return True
     pass
 
 def validate_clue_num(): #determines if spymaster clue num is valid
