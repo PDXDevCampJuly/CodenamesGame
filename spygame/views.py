@@ -8,12 +8,23 @@ game = Game()
 
 
 def get_spy_page(request):
-    
-
     player_type = request.GET['select']
-    spy_page = Player(type=player_type)
-    spy_page.save()
-    return render(request, 'spygamepg.html')
+
+    games = Game.objects.all()
+
+    blue_team = games[0].team_set.create(color="blue")
+    blue_team.player_set.create(type=player_type)
+
+    red_team = games[0].team_set.create(color="red")
+    red_team.player_set.create(type=player_type)
+
+    # game_code = game.game_code_num
+    # game.objects.get(game_code)
+    #
+    # game.team_set.
+    # # spy_page = Player(type=player_type)
+    # # spy_page.save()
+    return render(request, 'spygamepg.html', {"player_type": player_type})
 
 def get_spymaster_page(request):
     return render(request, 'spymastergamepg.html')
@@ -147,4 +158,3 @@ def create_game_code(): #if button clicked, display url on homepage
 #
 # def main():
 #     pass
->>>>>>> 5d6f8f721c03fd128061cb9e9bdbef379fb238f0
