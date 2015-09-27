@@ -11,14 +11,17 @@
     <main>
         <section class="getcode">
             <h1>Create game</h1>
-            <input type="button" name="click" value="Get code">
+            <form action="join_or_create" method="get">
+                <input type="button" name="click" value="Get code">
+            </form>
         </section>
 
         <section class="inputcode">
             <h1>Join game</h1>
-            <input type="text" name="name" placeholder="Code" required/>
-
-            <input type="submit" name="submit" value="post"/> 
+            <form action="join_or_create" method="post" id="join_game">{% csrf_token %}
+                <input type="text" name="game_code" placeholder="Code" required/>
+                <input type="submit" value="Join"/> 
+            </form>
         </section>
     </main>
 </body>
