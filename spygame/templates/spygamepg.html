@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block main %}
+    <main>
+        <section id="boardwrapper" class="boardwrapper">
+        </section>
+        <div>
+            <section>
+                <h3>Blue team</h3>
+                <ul>
+                    <li class="bspymaster">Test</li>
+                    <!-- This is were we'll dynamically load all blue team members onto the page-->
+                    <li>Test</li>
+                </ul>
+            </section>
+                <section>
+                    <h3>Red team</h3>
+                    <ul>
+                        <li class="rspymaster">Test</li>
+                        <!-- This is were we'll dynamically load all red team members onto the page-->
+                        <li>Test</li>
+                    </ul>
+                </section>
+        </div>
+            <p>Please click on your clue team blue!</p>
+            <section class="footerwrapper">
+                <p class="clue">Test</p>
+                <p>1</p>
+            </section>
+    </main>
+{% endblock %}
