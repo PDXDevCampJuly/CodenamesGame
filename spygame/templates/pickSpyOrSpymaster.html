@@ -9,8 +9,14 @@
 <body>
     <main>
         <h1>Pick player type</h1>
-        <a type="button" href="spygamepg.html">spy</a>
-        <a type="button" href="spymastergamepg.html">spymaster</a>
+
+        <form action="get_spy_page" method="get">
+            <button type="submit" name="select" value="spy" >spy</button>
+{#        </form>#}
+{#        <form action="spy_or_spymaster" method="get">#}
+            <button type="submit" name="select" value="spymaster">spymaster</button>
+        </form>
+{#        <a type="button" href="{% url 'spygame:get_spy_page' %}">spymaster</a>#}
     </main>
 </body>
 </html>

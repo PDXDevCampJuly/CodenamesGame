@@ -1,13 +1,18 @@
 from django.shortcuts import render
 from random import choice, sample, shuffle
 from .models import *
-import random
+from random import randint
 import string
 
 game = Game()
 
 
 def get_spy_page(request):
+    
+
+    player_type = request.GET['select']
+    spy_page = Player(type=player_type)
+    spy_page.save()
     return render(request, 'spygamepg.html')
 
 def get_spymaster_page(request):
@@ -17,16 +22,21 @@ def join_or_create(request):
     return render(request, 'Homepg.html')
 #
 def spy_or_spymaster(request):
+    print(request.GET)
+    create_game_code()
     return render(request, 'pickSpyOrSpymaster.html')
 #
 def create_game_code(): #if button clicked, display url on homepage
+    new_code = randint(1000000,9999999)
+    game = Game(password=new_code)
+    game.save()
 
-    password = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(7))
-    return password
+    #game_code_num = apps.get_model("spygame", "Game")
+    #game.password = new_code
 #
-# def assign_spymaster(): # assign spymaster to team
-#     pass
-#
+#def assign_player(): # assign spym
+
+
 # def get_words(): # assign word to card
 #     pass
 #
@@ -41,7 +51,7 @@ def create_game_code(): #if button clicked, display url on homepage
 #
 # def set_count(): #sets count from clue_num set by spymaster
 #     pass
-#
+#joi
 # def change_count(): # changes count of clicks players can make per turn
 #     pass
 #
