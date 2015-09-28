@@ -11,16 +11,15 @@ game = Game()
 
 
 def get_spy_page(request):
-    if len(request.GET) != 0:
-        player_type = request.GET['select']
+    player_type = request.GET['select']
 
-        games = Game.objects.all()
+    games = Game.objects.all()
 
-        blue_team = games[0].team_set.create(color="blue")
-        blue_team.player_set.create(type=player_type)
+    blue_team = games[0].team_set.create(color="blue")
+    blue_team.player_set.create(type=player_type)
 
-        red_team = games[0].team_set.create(color="red")
-        red_team.player_set.create(type=player_type)
+    red_team = games[0].team_set.create(color="red")
+    red_team.player_set.create(type=player_type)
 
     # game_code = game.game_code_num
     # game.objects.get(game_code)
