@@ -2,30 +2,29 @@
 {% block main %}
 
     <main>
-        <section id="boardwrapper" class="boardwrapper">
+        <section id="boardwrapper" class="table">
         </section>
-        <div>
-            <section>
-                <h3>Blue team</h3>
-                <ul>
-                    <li class="bspymaster">Test</li>
-                    <!-- This is were we'll dynamically load all blue team members onto the page-->
-                    <li>Test</li>
-                </ul>
-            </section>
-                <section>
-                    <h3>Red team</h3>
-                    <ul>
-                        <li class="rspymaster">Test</li>
-                        <!-- This is were we'll dynamically load all red team members onto the page-->
-                        <li>Test</li>
-                    </ul>
-                </section>
-        </div>
-            <p>Please click on your clue team blue!</p>
+
+        {% if player_type == "spymaster" %}
+            <p>Please enter your clue team blue!</p>
             <section class="footerwrapper">
-                <p class="clue">Test</p>
+                <p class="clue">Test spymaster</p>
                 <p>1</p>
             </section>
+        {% endif %}
+        {% if player_type == "spy" %}
+            <p>Please click on your clue team blue!</p>
+            <section class="footerwrapper">
+            <p class="clue">Test spy</p>
+            <p>5</p>
+            </section>
+        {% endif %}
+        {% if player_type == "" %}
+        <p>Please click on your clue team blue!</p>
+            <section class="footerwrapper">
+                <p class="clue">Test</p>
+                <p>2</p>
+            </section>
+        {% endif %}
     </main>
 {% endblock %}
