@@ -1,5 +1,4 @@
 
-
 $(function create_board() {
 
     var table = document.getElementById('boardwrapper'); //Appends table to html
@@ -19,7 +18,6 @@ $(function create_board() {
 
                     new_table.appendChild(new_tr);
                     table.appendChild(new_table); //appends table to html
-
         }
     }
 });

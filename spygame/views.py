@@ -67,20 +67,7 @@ def create_game(request):
     """
     New game is created when the spy/ spymaster page is loaded.
     """
-
-
-    game = Game()
-
-    #Team needs to be assigned to go first
-
-#     blueTeam = Team(game_id=game, color='blue')
-#     redTeam = Team(game_id=game, color='red')
-#
-#     goFirst = choice(0, 1)
-#
-#     words = Dictionary.objects.all()
-#     words.shuffle()
-# =======
+    # game = Game()
     games = Game.objects.all()
 
     goFirst = choice([0, 1])
@@ -88,54 +75,8 @@ def create_game(request):
 
     words = list(Dictionary.objects.all())
     words = words[:25]
-    # words.shuffle()
-# >>>>>>> editinghtml
-
-    coloredCards = []
-
-    # Make deck of colors
     if goFirst == 1:
-# <<<<<<< HEAD
-#         coloredCards.append('blue' * 9)
-#         coloredCards.append('red' * 8)
-#         blueGoFirst = True
-#     else:
-#         coloredCards.append('red' * 9)
-#         coloredCards.append('blue' * 8)
-#         redGoFirst = True
-#
-#     #Add colors to list
-#
-#     coloredCards.append('beige' * 7)
-#     coloredCards.append('black')
 
-    #Randomize color order
-
-    # coloredCards = shuffle(coloredCards)
-
-    # Build cards with random words + random colors
-
-    # for i in range(len(coloredCards)):
-    #     coloredCards[i] == Card(color=coloredCards.pop(), game_id=game, dict_word=words.pop())
-    #
-    # return render(request, 'pickSpyOrSpymaster.html')
-
-#
-# def spy_or_spymaster(request):
-#     print(request.GET)
-#     create_game_code()
-#     return render(request, 'pickSpyOrSpymaster.html')
-#
-
-    #game_code_num = apps.get_model("spygame", "Game")
-    #game.password = new_code
-#
-#def assign_player(): # assign spym
-
-
-# def get_words(): # assign word to card
-#     pass
-#
         coloredCards = ['blue' for i in range(9)]
         # coloredCards.append('red' * 8)
         coloredCards += ['red' for i in range(8)]
@@ -149,7 +90,6 @@ def create_game(request):
     coloredCards += ['black']
 
     #Randomize color order
-    # print(coloredCards)
 
     for i in range(len(coloredCards)):
         y_coord = i // 5
@@ -167,10 +107,12 @@ def create_game_code(): #if button clicked, display url on homepage
 def spy_or_spymaster(request, pid):
     card = Card.objects.all()
     card_names = []
+    card_color = []
     x = 0
     while x < 25:
         y = choice(card)
         card_names.append(y.dict_word.word)
+        card_color.append(y.color)
         x += 1
     player = Player.objects.filter(id = pid)[0]
     context = create_game(request)
