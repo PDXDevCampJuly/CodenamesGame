@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.template import loader, RequestContext
+from django.http import HttpResponse
 from random import choice, sample, shuffle
 from .models import *
 from random import randint
@@ -8,15 +10,16 @@ game = Game()
 
 
 def get_spy_page(request):
-    player_type = request.GET['select']
+    if len(request.GET) != 0:
+        player_type = request.GET['select']
 
-    games = Game.objects.all()
+        games = Game.objects.all()
 
-    blue_team = games[0].team_set.create(color="blue")
-    blue_team.player_set.create(type=player_type)
+        blue_team = games[0].team_set.create(color="blue")
+        blue_team.player_set.create(type=player_type)
 
-    red_team = games[0].team_set.create(color="red")
-    red_team.player_set.create(type=player_type)
+        red_team = games[0].team_set.create(color="red")
+        red_team.player_set.create(type=player_type)
 
     # game_code = game.game_code_num
     # game.objects.get(game_code)
@@ -30,6 +33,51 @@ def get_spymaster_page(request):
     return render(request, 'spymastergamepg.html')
 
 def join_or_create(request):
+    """
+    Home page view. A user can create a new game or join an existing one as
+    the spy or spymaster client, whichever hasn't been created.
+    """
+    # This view is entered from a homepage post of a game code.
+    if (request.method == "POST"):
+        game_code = request.POST['game_code']
+        print('Game code:', game_code)
+        # Validate that 'game_code' is an integer
+        # VALIDATION CODE GOES HERE
+        games = Game.objects.all()
+        # games = Game.objects.filter(password=game_code)
+        # If a game hasn't been started with the entered code, redirect to
+        # the homepage.
+        if len(games) == 0:
+            print("Games is empty.")    # Redirect to homepage
+            return render('Homepg.html')
+        else:
+            print("Got a game to join.")
+            blue_team = games[0].team_set.filter(color='blue')
+            red_team = games[0].team_set.filter(color='red')
+            print(games[0].team_set.filter(color='blue'))
+            print(games[0].team_set.filter(color='red'))
+            player_type = blue_team[0].player_set.all()[
+                0].type
+            # player_type = games[0].team_set.get(color='red').player_set.all()[
+            #     0].type
+            if player_type == 'spy':
+                blue_team[0].player_set.create(type='spymaster',
+                                            name='blue_master')
+                red_team[0].player_set.create(type='spymaster',
+                                            name='red_master')
+            else:
+                blue_team[0].player_set.create(type='spy',
+                                            name='blue_player')
+                red_team[0].player_set.create(type='spy',
+                                           name='red_player')
+        template = loader.get_template('spygamepg.html')
+        context = RequestContext(request, {
+            'display_type': player_type,
+        })
+        # return HttpResponse(template.render(context))
+        # return render(request, 'spygamepg.html', {'display_type': player_type})
+        return redirect('/spygame/get_spy_page', {'player_type': player_type})
+
     return render(request, 'Homepg.html')
 
 def create_game(request):
